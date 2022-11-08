@@ -2,6 +2,10 @@ const { stdin } = process;
 const fs = require("fs");
 const path = require("path");
 
+fs.writeFile(path.join(__dirname, "text.txt"), '',(error) => {
+  if (error) return console.error(error.message);
+});
+
 console.log("Введите текст");
 process.on("SIGINT", handle);
 function handle() {
